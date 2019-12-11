@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="Voltar" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Confirme os dados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <br><br>
+
+  <ion-item>
+      <ion-label class="ion-text-wrap">
+        <p>Código</p>
+        <p *ngIf="data && data.text">{{data.text}}</p>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item>
+    <ion-label class="ion-text-wrap">
+      <p>Tipo de fatura</p>
+      <h1>{{type}}</h1>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+      <p> Valor de fatura</p>
+      <h1>R$ 82,90</h1>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+      <p>Em nome de</p>
+      <h1>Maria Do Carmo Ribeiro</h1>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+      <p>Data de vencimento</p>
+      <h1>15/01/2020</h1>
+    </ion-label>
+  </ion-item>
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">
+      <p>Juros cobrao</p>
+      <h1>R$ 0,00</h1>
+    </ion-label>
+  </ion-item>
+
+  <br>
+
+  <div class="ion-padding">
+    <ion-button expand="block" size="large" mode="ios" [routerLink]="['/call']">CONFIRMAR</ion-button>
+  </div>
+  
+  -------------
+  <p>DEBUG: </p>
+  <p>{{data | json}}</p>
+  -------------
+</ion-content>

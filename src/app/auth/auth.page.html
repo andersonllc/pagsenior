@@ -1,0 +1,35 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="floating">
+      Seu email
+    </ion-label>
+    <ion-input type="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">
+      Sua senha
+    </ion-label>
+    <ion-input type="password"></ion-input>
+  </ion-item>
+
+  <br>
+  <ion-button expand="block" size="large" mode="ios" (click)="go()">
+    <span *ngIf="!isLoading">ENTRAR</span>
+    <ion-spinner *ngIf="isLoading"></ion-spinner>
+  </ion-button>
+
+
+  <br><br>
+  <ion-button expand="block" mode="ios" fill="clear">Recuperar meu acesso</ion-button>
+
+</ion-content>

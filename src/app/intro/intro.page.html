@@ -1,0 +1,68 @@
+<ion-header no-shadow no-border>
+  <ion-toolbar transluced="true">
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true" class="ion-padding">
+
+  <ion-slides #mySlider>
+    <ion-slide>
+      <div>
+        <h2>Pague suas contas sem precisar pegar fila</h2>
+        <div style="display: block;">
+          <img src="../../assets/imgs/img1.png" alt="">
+        </div>
+        <div class="ion-text-right" style="display: block;">
+          <ion-label class="ion-text-center">
+            <p>A PagSenior te ajuda a pagar as principais contas de casa sem precisar ir ao Banco ou Lotérica.</p>
+          </ion-label>
+          <ion-button fill="clear" (click)="next()">Próximo <ion-icon name="arrow-forward"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div>
+        <h2>Garantia de segurança</h2>
+        <div style="display: block;">
+          <img src="../../assets/imgs/img2.png" alt="">
+        </div>
+        <div class="ion-text-right" style="display: block;">
+          <ion-label class="ion-text-center">
+            <p>Para pagar a conta, a PagSenior envia SMS com código de confirmação e ligação para garantir a segunrança.
+            </p>
+          </ion-label>
+          <ion-button fill="clear" (click)="next()">Próximo <ion-icon name="arrow-forward"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div>
+        <h2>Poucos passos para pagar suas contas</h2>
+        <div style="display: block;">
+          <img src="../../assets/imgs/img3.png" alt="">
+        </div>
+        <div class="ion-text-right" style="display: block;">
+          <ion-label class="ion-text-center">
+            <p>O passo-a-passo é explicado a todo momento para que você não se esqueça de todo o processo.</p>
+          </ion-label>
+          <ion-button [routerLink]="['/login']" fill="clear">Próximo <ion-icon name="arrow-forward"></ion-icon>
+          </ion-button>
+        </div>
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+
+</ion-content>
+
+<!-- <ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-button><ion-icon name="arow-forward"></ion-icon> Próximo</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer> -->
