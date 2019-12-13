@@ -16,8 +16,16 @@
           <ion-label class="ion-text-center">
             <p>A PagSenior te ajuda a pagar as principais contas de casa sem precisar ir ao Banco ou Lotérica.</p>
           </ion-label>
-          <ion-button fill="clear" (click)="next()">Próximo <ion-icon name="arrow-forward"></ion-icon>
-          </ion-button>
+          <ion-row>
+            <ion-col size="6" class="ion-text-left">
+              <ion-button [routerLink]="['/login']" fill="clear" size="small">Pular
+              </ion-button>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+              <ion-button shape="round" (click)="next()" size="small">Próximo <ion-icon name="arrow-forward"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </ion-slide>
@@ -33,8 +41,16 @@
             <p>Para pagar a conta, a PagSenior envia SMS com código de confirmação e ligação para garantir a segunrança.
             </p>
           </ion-label>
-          <ion-button fill="clear" (click)="next()">Próximo <ion-icon name="arrow-forward"></ion-icon>
-          </ion-button>
+          <ion-row>
+            <ion-col size="6" class="ion-text-left">
+              <ion-button [routerLink]="['/login']" fill="clear" size="small">Pular
+              </ion-button>
+            </ion-col>
+            <ion-col size="6" class="ion-text-right">
+              <ion-button shape="round" (click)="next()" size="small">Próximo <ion-icon name="arrow-forward"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
         </div>
       </div>
     </ion-slide>
@@ -49,7 +65,10 @@
           <ion-label class="ion-text-center">
             <p>O passo-a-passo é explicado a todo momento para que você não se esqueça de todo o processo.</p>
           </ion-label>
-          <ion-button [routerLink]="['/login']" fill="clear">Próximo <ion-icon name="arrow-forward"></ion-icon>
+
+        </div>
+        <div class="ion-text-center">
+          <ion-button [routerLink]="['/login']" shape="round">Começar <ion-icon name="arrow-forward"></ion-icon>
           </ion-button>
         </div>
       </div>

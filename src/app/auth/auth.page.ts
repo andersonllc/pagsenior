@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from "@ionic/angular";
+import { NavController, AlertController } from "@ionic/angular";
 
 @Component({
   selector: 'app-auth',
@@ -9,18 +9,40 @@ import { NavController } from "@ionic/angular";
 export class AuthPage implements OnInit {
 
   isLoading:boolean = false;
+  user = {
+    name: '',
+    phonenumber: ''
+  }
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public alertCtrl: AlertController, public navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
   go(){
-    this.isLoading = true; 
+    if(this.user.name !='' && this.user.phonenumber !=''){
+      this.isLoading = true; 
     setTimeout(() => {
       this.isLoading = false; 
-      this.navCtrl.navigateRoot(['/home'])
+
+      localStorage.setItem('username' ,this.user.name)
+      localStorage.setItem('phonenumber' ,this.user.phonenumber)
+
+      this.navCtrl.navigateRoot(['/home']);
+
     }, 2000);
+    }else{
+      this.showAlert('Por favor preencha com seu Nome e Número celular')
+    }
+  }
+
+  async showAlert(message){
+    let alert = await this.alertCtrl.create({
+      header: 'Ops!',
+      message: message,
+      buttons: ['Entendi!']
+    })
+    return await alert.present()
   }
 
 }

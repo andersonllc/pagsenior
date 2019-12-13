@@ -56,7 +56,7 @@ const routes: Routes = [
     loadChildren: () => import('./confirm/confirm.module').then( m => m.ConfirmPageModule)
   },
   {
-    path: 'call',
+    path: 'call/:type',
     loadChildren: () => import('./call/call.module').then( m => m.CallPageModule)
   }
 ];

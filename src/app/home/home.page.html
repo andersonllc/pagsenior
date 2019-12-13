@@ -1,22 +1,28 @@
 <ion-header no-shadow no-border>
   <ion-toolbar>
+    <ion-buttons slot='start'>
+        <ion-avatar [routerLink]="['/profile']" slot="start" style="padding: 8px;">
+            <img src="../../assets/imgs/avatar.png" alt="">
+          </ion-avatar>
+    </ion-buttons>
     <ion-buttons slot="end">
       <ion-button [routerLink]="['/notifications']">
         <ion-icon name="ios-notifications-outline"></ion-icon>
       </ion-button>
-      <ion-menu-button></ion-menu-button>
+      <ion-button>
+        <ion-icon name="help"></ion-icon> Ajuda
+      </ion-button>
+      <!-- <ion-menu-button></ion-menu-button> -->
     </ion-buttons>
-    <ion-title>
-      Oi Maria Do Carmo!
-    </ion-title>
   </ion-toolbar>
+
   <ion-toolbar [routerLink]="['/profile']">
     <ion-item lines="none">
-      <ion-avatar slot="start">
-        <img src="../../assets/imgs/avatar2.png" alt="">
-      </ion-avatar>
+      
       <ion-label>
-          <ion-badge style="background: transparent; color: #777777; border: solid thin #777777" mode="ios">saldo: R$ 480,00</ion-badge>
+        <h1>Oi Maria Do Carmo!</h1>
+        <ion-badge style="background: transparent; color: #777777; border: solid thin #777777" mode="ios">saldo: R$
+          480,00</ion-badge>
       </ion-label>
     </ion-item>
   </ion-toolbar>
@@ -25,15 +31,54 @@
 <ion-content>
 
   <div class="ion-padding-start ion-padding-end">
-      <ion-item class="ion-no-padding">
-          <ion-label class="ion-text-center">
-            <p>Selecione as contas que deseja pagar...</p>
-          </ion-label>
-        </ion-item>
+    <ion-item class="ion-no-padding">
+      <ion-label class="ion-text-center">
+        <p>Selecione as contas que deseja pagar...</p>
+      </ion-label>
+    </ion-item>
   </div>
-  <ion-grid>
+
+
+  <ion-list>
+    <ion-card color="primary" (click)="scan('1')">
+      <ion-item detail color="primary" lines="none">
+        <ion-icon slot="start" name="ios-water"></ion-icon>
+        <ion-label>
+          <h2>pagar conta de água</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card color="primary" (click)="scan('2')"> 
+      <ion-item detail color="primary" lines="none">
+        <ion-icon slot="start" name="ios-bulb"></ion-icon>
+        <ion-label>
+          <h2>pagar conta de luz</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card color="tertiary" (click)="scan('3')">
+      <ion-item detail color="primary" lines="none">
+        <ion-icon slot="start" name="call"></ion-icon>
+        <ion-label>
+          <h2>pagar conta de telefone</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+
+    <ion-card (click)="scan('4')">
+      <ion-item detail lines="none">
+        <ion-icon slot="start" name="barcode"></ion-icon>
+        <ion-label>
+          <h2>outro tipo de conta</h2>
+        </ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-list>
+  <!-- <ion-grid>
     <ion-row>
-      <ion-col size="6">
+      <ion-col size="12">
         <ion-card [color]="(selected == '1')? 'primary' : ''" (click)="select('1')">
           <ion-card-content>
             <ion-label>
@@ -42,7 +87,7 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
-      <ion-col size="6">
+      <ion-col size="12">
           <ion-card [color]="(selected == '2')? 'primary' : ''" (click)="select('2')">
             <ion-card-content>
               <ion-label>
@@ -51,7 +96,7 @@
             </ion-card-content>
           </ion-card>
         </ion-col>
-        <ion-col size="6">
+        <ion-col size="12">
             <ion-card [color]="(selected == '3')? 'primary' : ''" (click)="select('3')">
               <ion-card-content>
                 <ion-label>
@@ -60,7 +105,7 @@
               </ion-card-content>
             </ion-card>
           </ion-col>
-          <ion-col size="6">
+          <ion-col size="12">
               <ion-card [color]="(selected == '4')? 'primary' : ''" (click)="select('4')">
                 <ion-card-content>
                   <ion-label>
@@ -70,12 +115,14 @@
               </ion-card>
             </ion-col>
     </ion-row>
-  </ion-grid>
-  
+  </ion-grid> -->
+
 </ion-content>
 
-<ion-footer no-border no-shadow>
+<!-- <ion-footer no-border no-shadow>
   <ion-toolbar class="ion-padding">
-    <ion-button (click)="scan()" expand="block" size="large" mode="ios">PAGAR</ion-button>
+    <ion-button (click)="scan()" expand="block" size="large" mode="ios">
+      PAGAR
+    </ion-button>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->

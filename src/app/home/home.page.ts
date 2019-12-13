@@ -13,16 +13,14 @@ export class HomePage {
   constructor(public navCtrl: NavController, public alertCtrl: AlertController, private barcodeScanner: BarcodeScanner) {}
 
   scan(type?){
-    if(this.selected !=''){
+
       this.barcodeScanner.scan().then((data:any) =>{
         localStorage.setItem('data', JSON.stringify(data));
-        this.navCtrl.navigateForward(['/detail', this.selected])
+        this.navCtrl.navigateForward(['/detail', type])
       }).catch((err)=>{
         this.showAlert(err)
       })
-    }else{
-      this.showAlert('Por favor escolha um tipo de conta para continuar')
-    }
+ 
   }
 
   select(item){

@@ -17,7 +17,7 @@ export class DetailPage implements OnInit {
       this.type = 'Conta de água'
     }
     if(t == '2'){
-      this.type = 'Conta de lúz'
+      this.type = 'Conta de luz'
     }
     if(t == '3'){
       this.type = 'Conta de telefone'
